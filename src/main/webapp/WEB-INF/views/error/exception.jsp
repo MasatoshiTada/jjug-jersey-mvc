@@ -7,6 +7,7 @@
         <title>社員検索システム</title>
     </head>
     <body>
-        例外画面
+        <h1>例外画面</h1>
+        <p><c:out value="${it.message}"/></p>
     </body>
 </html>

@@ -7,6 +7,8 @@
         <title>社員情報更新</title>
     </head>
     <body>
+        <h1>作成中...</h1>
+        <%--
         <form action="./insertConfirm" method="post">
             氏名：<input type="text" name="name"><br>
             入社年月日：<input type="text" name="joinedDate"><br>
@@ -18,5 +20,6 @@
             </select>
             <input type="submit" value="新規作成">
         </form>
+        --%>
     </body>
 </html>

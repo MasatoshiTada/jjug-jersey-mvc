@@ -15,10 +15,10 @@
     <body>
         <h1>社員情報削除</h1>
         <p>この社員情報を削除しますか？</p>
-        社員ID：<c:out escapeXml="true" value="${it.empId}"/><br>
-        氏名：<c:out escapeXml="true" value="${it.name}"/><br>
-        入社年月日：<c:out escapeXml="true" value="${it.joinedDate}"/><br>
-        部署：<c:out escapeXml="true" value="${it.department.name}"/><br>
+        社員ID：<c:out value="${it.empId}"/><br>
+        氏名：<c:out value="${it.name}"/><br>
+        入社年月日：<c:out value="${it.joinedDate}"/><br>
+        部署：<c:out value="${it.department.name}"/><br>
         <form action="./index" method="get">
             <input type="submit" value="戻る">
         </form>

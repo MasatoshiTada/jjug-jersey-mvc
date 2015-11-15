@@ -7,6 +7,8 @@
         <title>社員情報更新</title>
     </head>
     <body>
+        <h1>作成中...</h1>
+        <%--
         <form action="./editConfirm" method="post">
             社員ID：<c:out escapeXml="true" value="${models.employee.empId}"/><br>
             <input type="hidden" name="empId" value="${models.employee.empId}">
@@ -20,5 +22,6 @@
             </select>
             <input type="submit" value="更新">
         </form>
+        --%>
     </body>
 </html>

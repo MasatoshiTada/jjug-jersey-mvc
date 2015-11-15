@@ -1,6 +1,6 @@
 package com.example.rest.resource;
 
-import com.example.rest.dto.EmployeeDto;
+import com.example.persistence.entity.Employee;
 import com.example.service.EmployeeService;
 import java.net.URI;
 import javax.enterprise.context.RequestScoped;
@@ -33,14 +33,15 @@ public class EmployeeDeleteResource {
     @GET
     @Path("deleteConfirm")
     public Viewable deleteConfirm(@QueryParam("empId") @Pattern(regexp = "[1-9][0-9]*") String empId) throws Exception {
-        EmployeeDto employeeDto = employeeService.findByEmpId(Integer.valueOf(empId));
-        return new Viewable("deleteConfirm", employeeDto);
+        Employee employee = employeeService.findByEmpId(Integer.valueOf(empId)).get();
+        return new Viewable("deleteConfirm", employee);
     }
     
     @POST
     @Path("delete")
     public Response delete(@FormParam("empId") @Pattern(regexp = "[1-9][0-9]*") String empId) throws Exception {
         employeeService.delete(Integer.valueOf(empId));
+        // index画面にリダイレクト
         URI location = uriInfo.getBaseUriBuilder().path("employees/index").build();
         return Response.status(Response.Status.MOVED_PERMANENTLY)
                 .location(location)
