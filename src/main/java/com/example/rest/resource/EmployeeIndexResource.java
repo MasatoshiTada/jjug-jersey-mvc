@@ -47,21 +47,27 @@ public class EmployeeIndexResource {
         List<Employee> employeeList = employeeService.findByName(name);
         employeeListDto.setEmployeeList(employeeList);
         return new Viewable("index");
-//        throw new Exception("コントローラーで例外"); // 例外発生時はindex画面に遷移する
+//        throw new Exception("コントローラーで例外"); // 例外発生時は、@ErrorTemplateで指定したindex画面に遷移する
     }
     
-    // TODO: ErrorTemplateがうまく遷移できない
+    /**
+     * [at]ErrorTemplateを指定していないので、
+     * 例外はExceptionMapperがキャッチして、例外画面に遷移する
+     * @throws Exception 
+     */
     @GET
     @Path("throwRuntimeException")
-    @ErrorTemplate(name = "/WEB-INF/views/error/exception")
     public void throwRuntimeException() throws Exception {
         throw new RuntimeException("実行時例外が発生しました。");
     }
     
-    // TODO: ErrorTemplateがうまく遷移できない
+    /**
+     * [at]ErrorTemplateを指定していないので、
+     * 例外はExceptionMapperがキャッチして、例外画面に遷移する
+     * @throws Exception 
+     */
     @GET
     @Path("throwIOException")
-    @ErrorTemplate(name = "/WEB-INF/views/error/exception")
     public void throwIOException() throws Exception {
         throw new IOException("入出力例外が発生しました。");
     }
