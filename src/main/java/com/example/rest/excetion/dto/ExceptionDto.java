@@ -10,8 +10,8 @@ import javax.inject.Named;
  * @author tada
  */
 @Named
-//@RequestScoped
-@SessionScoped
+@RequestScoped
+//@SessionScoped
 public class ExceptionDto implements Serializable {
 
     private String errorType;

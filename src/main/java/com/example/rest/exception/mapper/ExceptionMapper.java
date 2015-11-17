@@ -24,7 +24,7 @@ public class ExceptionMapper implements javax.ws.rs.ext.ExceptionMapper<Exceptio
         fillExceptionDto(exception);
         System.out.println("errorType = " + exceptionDto.getErrorType() + " : message = " + exceptionDto.getMessages()[0]);
         return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                .entity(new Viewable("exception"))
+                .entity(new Viewable("exception", exceptionDto))
                 .build();
     }
     
