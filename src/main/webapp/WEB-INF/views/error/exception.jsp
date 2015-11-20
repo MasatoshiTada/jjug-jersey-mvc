@@ -7,8 +7,7 @@
         <title>社員検索システム</title>
     </head>
     <body>
-        <h1>例外画面</h1>
-        <%-- TODO: errorTypeとmessageがブラウザ上に表示されない --%>
+        <h1>例外画面(WEB-INF/views/error/)</h1>
         <p><c:out value="${exceptionDto.errorType}"/></p>
         <c:forEach items="${exceptionDto.messages}" var="message">
             <p><c:out value="${message}"/></p>

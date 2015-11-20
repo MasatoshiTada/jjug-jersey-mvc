@@ -21,10 +21,13 @@ public class ExceptionMapper implements javax.ws.rs.ext.ExceptionMapper<Exceptio
     
     @Override
     public Response toResponse(Exception exception) {
+        exception.printStackTrace();
         fillExceptionDto(exception);
         System.out.println("errorType = " + exceptionDto.getErrorType() + " : message = " + exceptionDto.getMessages()[0]);
+        
+        // JSPのパスは/WEB-INF/viewsからの絶対パスで指定する
         return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                .entity(new Viewable("exception", exceptionDto))
+                .entity(new Viewable("/error/exception"))
                 .build();
     }
     
