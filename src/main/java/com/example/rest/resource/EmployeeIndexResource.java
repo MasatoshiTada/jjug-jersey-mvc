@@ -34,12 +34,13 @@ public class EmployeeIndexResource {
     public Viewable index() throws Exception {
         List<Employee> employeeList = employeeService.findByName("");
         employeeListDto.setEmployeeList(employeeList);
-        return new Viewable("index");
+        return null;
     }
     
     @GET
     @Path("findByName")
-    @ErrorTemplate(name = "index")
+    // TODO: 演習1-3. バリデーションエラー時にindex.jspに遷移する
+    
     public Viewable findByName(@QueryParam("name") @DefaultValue("") 
             @Pattern(regexp = "[a-zA-Z\\s]*", message = "{employee.name.pattern.alphabet.or.space}")
             @Size(max = 10, message = "{employee.name.size.string}")
