@@ -2,7 +2,6 @@ package com.example.rest.excetion.dto;
 
 import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 /**
@@ -11,7 +10,6 @@ import javax.inject.Named;
  */
 @Named
 @RequestScoped
-//@SessionScoped
 public class ExceptionDto implements Serializable {
 
     private String errorType;
@@ -22,11 +20,6 @@ public class ExceptionDto implements Serializable {
         
     }
     
-    public ExceptionDto(String errorType, String... messages) {
-        this.errorType = errorType;
-        this.messages = messages;
-    }
-
     /**
      * @return the errorType
      */
