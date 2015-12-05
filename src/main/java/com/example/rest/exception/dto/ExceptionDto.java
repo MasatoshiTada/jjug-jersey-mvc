@@ -1,4 +1,4 @@
-package com.example.rest.excetion.dto;
+package com.example.rest.exception.dto;
 
 import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
