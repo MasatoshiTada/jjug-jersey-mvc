@@ -1,6 +1,6 @@
 package com.example.rest.exception.mapper;
 
-import com.example.rest.excetion.dto.ExceptionDto;
+import com.example.rest.exception.dto.ExceptionDto;
 import java.util.ResourceBundle;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
